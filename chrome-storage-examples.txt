@@ -1,0 +1,43 @@
+### using google chrome sync to store settings in account
+just replace "local" with "sync" example:
+chrome.storage.sync.set
+
+### set
+chrome.storage.local.set({'gameminerbot_enabled': email}, function() { 
+	// Notify that we saved.
+});
+
+### get
+chrome.storage.local.get('gameminerbot_enabled', function (result){
+	var gbot_enabled = result.gameminerbot_enabled;
+});
+
+### get multiple
+chrome.storage.local.get('gameminerbot_enabled', function (result) {
+	chrome.storage.local.get('gameminerbot_spendgold', function (options) {
+		var gbot_enabled  = result.gameminerbot_enabled;
+		var gbot_spendgold 	= options.gameminerbot_spendgold;
+	});
+});
+
+# this is required in manifest
+"permissions": [
+  "storage"
+],
+
+## tracking changes is also possible like this:
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+		for (key in changes) {
+		  var storageChange = changes[key];
+		  console.log('Storage key "%s" in namespace "%s" changed. ' +
+					  'Old value was "%s", new value is "%s".',
+					  key,
+					  namespace,
+					  storageChange.oldValue,
+					  storageChange.newValue);
+		}
+	  });
+
+## other available functions are:
+.remove(string or array of string keys, function callback)
+.clear(function callback)

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gameminer Bot</title>
+	<link rel="stylesheet" href="popup.css" type="text/css" />
+	<script src="jquery-1.12.3.min.js"></script>
+	<script src="popup.js"></script>
+</head>
+<body>
+	<header>
+		<div class="content">
+			<img src="images/logo.png" style="width:30%;margin-top:-5px">
+			<h2 style="float:right">Settings</h2>
+		</div>
+	</header>
+	<div class="content">
+		<div class="span6 text-center" id="actions">
+			<div class="fullwidth">
+				<!--<p style="margin-top: 0;">Receive notifications by email:</p>
+				<input id="email" type="text" placeholder="Type your email (required)" required>-->
+				<p style="margin-top: 15px; float:left">Customize scan delay (in minutes):</p>
+				<input id="gdelay" type="number" min="1" max="99999" required>
+
+				<form id="formcheck">
+					<div class="col-4">
+						<input type="checkbox" id="genable" class="checkitem" name="actived" value="Bot enabled"><label for="genable">Bot enabled</label></input>
+						<input type="checkbox" id="gsgold" class="checkitem" name="actived" value="Enter gold giveaways"><label for="gsgold">Enter gold giveaways</label></input>
+					</div>
+					<div class="col-4">
+						<input type="checkbox" id="gregion" class="checkitem" name="actived" value="Enter region free only"><label for="gregion">Enter region free only</label></input>
+					</div>
+					<input style="opacity:0"></input>
+					<hr style="margin-top:-15px"><br>
+					Adjust <b>coal</b> price here:<br>
+					<p style="margin-top: 15px; float:left">minimum:</p>
+					<input style="float:left;" id="gcoalmin" type="number" min="0" max="1000" required>
+					<p style="margin-top: 15px;margin-left:5px;float:left">maximum:</p>
+					<input id="gcoalmax" type="number" min="0" max="1000" required>
+					<br><br>
+					Adjust <b style="color:#FFBF00">gold</b> price here:<br>
+					<p style="margin-top: 15px; float:left">minimum:</p>
+					<input style="float:left;" id="ggoldmin" type="number" min="0" max="1000" required>
+					<p style="margin-top: 15px;margin-left:5px;float:left">maximum:</p>
+					<input id="ggoldmax" type="number" min="0" max="1000" required>
+					<div class="col-4">
+						<input type="checkbox" id="gafree" class="checkitem" name="actived" value="Enter region free only"><label for="gafree" style="width:293px">Always join free giveaways</label></input>
+					</div>
+					<div class="feedback" id="feedback">Configuration saved!</div>
+					<div class="feedbackbad" id="feedbackbad">Error saving settings...</div>
+				</form>
+			</div>
+		</div>
+		<div id="instructions">
+			<div class="fullwidth">
+				<h3>INSTRUCTIONS <small><a href="#" id="show"><span id="message">show</span></a></small></h3>
+				<p>With this chrome extension you can automatically join giveaways on Gameminer.</p>
+				<ol>
+					<li>Go to <a href="http://gameminer.net/" target="_blank">gameminer.net</a> and log in with your Steam account.</li>
+					<li>Click on "Bot enabled" in this settings window.</li>
+					<li>Refresh the website and the bot will start running.</li>
+				</ol>
+				<p><b>Note:</b> You need to keep the website open in order to keep the bot running.</p>
+				<p>This might be changed in the future.</p>
+				<p>Hint: Giveaways will be joined shortly before they expire, so don't worry if the bot doesn't join all giveaways at once.</p>
+			</div>
+		</div>
+		<hr>
+		<div style="margin:15px 0">
+		<p class="center">Contact (Steam): <a target="_blank" href="https://steamcommunity.com/id/tackyou">tackyou</a></p></div>
+	</div>
+</body>
+</html>
